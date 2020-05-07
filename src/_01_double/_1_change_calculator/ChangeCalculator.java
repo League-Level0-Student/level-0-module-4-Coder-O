@@ -22,7 +22,14 @@ public class ChangeCalculator {
 		// Calculate how much money the user has.  Hint: Use a double variable 
 		double ammountOfChange = (numbOfNickels * 5) + (numbOfDimes * 10) + (numbOfQuarters * 25);
 		// Tell the user how much money they have in dollars and cents format (e.g. $6.75)
-
+		if (ammountOfChange % 10 == 0) {
+			
+				JOptionPane.showMessageDialog(null, "You have "+(ammountOfChange/100)+"0 in change.");
+			
+		}
+		else {
+			JOptionPane.showMessageDialog(null, "You have $"+(ammountOfChange/100)+" in change.");
+		}
 	}
 }
 
