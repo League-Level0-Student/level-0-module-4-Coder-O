@@ -36,14 +36,17 @@ void draw() {
   } else {
     pupilY = mouseY;
   }*/
-  float mouseXFromCenter = mouseX - width/2;
-  float mouseYFromCenter = mouseY - height/2;
+  float mouseXFromCenter = mouseX - 400;
+  float mouseYFromCenter = mouseY - 300;
   
-  float pupilDistanceFromCenter = dist(width/2, height/2, mouseX, mouseY);
+  float pupilDistanceFromCenter = dist(400, 300, mouseX, mouseY)/10;
   
   float theta = atan(mouseXFromCenter/mouseYFromCenter);
+  if (mouseYFromCenter<0) {
+    theta += PI;
+  }
   
-  pupilX = pupilDistanceFromCenter * sin(theta);
-  pupilY = pupilDistanceFromCenter * cos(theta);
+  pupilX = 400 + pupilDistanceFromCenter * sin(theta);
+  pupilY = 300 + pupilDistanceFromCenter * cos(theta);
   ellipse(pupilX,pupilY,63,45);
 }
