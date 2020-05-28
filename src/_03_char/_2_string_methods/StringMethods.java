@@ -26,7 +26,13 @@ public class StringMethods {
 		//    EXAMPLE: if your string is "abc" and you are searching 
 		//             for char 'b', then print "b is at index 1"
 		int y = 0;
-		while(y < aString.length() && )
+		boolean char_not_found = true;
+		while(y < aString.length() && char_not_found) {
+			if(aString.charAt(y)=='3') {
+				System.out.println("\n3 is at index "+y+".");
+			}
+		y++;
+		}
 	}
 }
 
